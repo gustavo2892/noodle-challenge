@@ -25,4 +25,4 @@ Faça um programa que, dado o tempo de preparo do miojo, e os tempos das duas am
 3. Rode `yarn` para instalar todas as dependências
 4. Rode `yarn dev` para iniciar a aplicação no endereço `http://localhost:3000`.
 
-_Caso não tenha o ambiente de desenvolvimento, pode confirar a [aplicação](https://noodle-challenge.herokuapp.com/) no Heroku!_
+_Caso não tenha o ambiente de desenvolvimento, pode conferir a [aplicação](https://noodle-challenge.herokuapp.com/) no Heroku!_
