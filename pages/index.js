@@ -42,6 +42,7 @@ export default function Home() {
       setDisabledOptions(true);
       setMessage(`O tempo necessário para a preparação do miojo é de ${res.data} minutos`);
     }).catch((error) => {
+      setDisabledOptions(true);
       setMessage('Não é possível cozinhar o miojo no tempo exato com as ampulhetas disponíveis');
     })
   };
