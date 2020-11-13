@@ -14,6 +14,8 @@ app.prepare().then(() => {
   server.use(express.json());
   server.use(routes);
 
+  server.get('/', (req, res) => app.render(req, res, '/'));
+
   server.all('*', (req, res) => {
     return handle(req, res)
   });
