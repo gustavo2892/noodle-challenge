@@ -19,6 +19,16 @@ export default function Home() {
   const [message, setMessage] = useState('Preencha todos os campos');
   
   const handleSubmit = () => {
+    
+    if (!noodleTimeTotal || !noodleTimeTotal || !hourglassTimeB) {
+      const configNotification = {
+        message: 'Verifique os dados',
+        description: 'Preencha todos os campos'
+      }
+
+      notification.warning(configNotification);
+      return;
+    }
 
     if (noodleTimeTotal >= hourglassTimeA || noodleTimeTotal >= hourglassTimeB) {
       const configNotification = {
@@ -30,6 +40,8 @@ export default function Home() {
       return;
     }
 
+    setDisabledOptions(true);
+
     axios({
       method: 'post',
       url: '/noodles',
@@ -39,10 +51,8 @@ export default function Home() {
         hourglassTimeB
       }
     }).then((res) => {
-      setDisabledOptions(true);
       setMessage(`O tempo necessário para a preparação do miojo é de ${res.data} minutos`);
     }).catch((error) => {
-      setDisabledOptions(true);
       setMessage('Não é possível cozinhar o miojo no tempo exato com as ampulhetas disponíveis');
     })
   };
