@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node server/server.js",
-    "build": "next build",
-    "start": "cross-env NODE_ENV=production node server/server.js"
+    "build": "next build && babel server -d .next/server",
+    "start": "NODE_ENV=production node server/server.js",
+    "heroku-postbuild": "next build && babel server -d .next/server"
   },
   "dependencies": {
     "@ant-design/icons": "4.2.1",
